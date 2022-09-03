@@ -1,0 +1,73 @@
+header{
+    height: 100vh;
+    padding-top: 7rem;
+    overflow: hidden;
+}
+.header-container{
+    text-align: center;
+    height: 100%;
+    position: relative;
+}
+/*  ****** CTA ******  */
+.cta{
+    margin-top: 2.5rem;
+    display:flex;
+    gap:1.2rem;
+    justify-content: center;
+}
+/*  ****** HeaderSocials ******  */
+.header-social{
+    display:flex;
+    gap:0.8rem;
+    flex-direction: column;
+    justify-content:space-between;
+    position: absolute;
+    left:0;
+    bottom: 3rem;
+
+}
+.header-social::after{
+    content:"";
+    width:1px;
+    height:2rem;
+    background-color: var(--color-primary);
+}
+/*  ****** ME ******  */
+.me{
+   background: linear-gradient(var(--color-primary),transparent);
+   width:22rem;
+   height:30rem;
+   position:absolute;
+   margin-top:4rem;
+   left:calc(50% - 11rem);
+   border-radius:6rem 6rem 1rem 1rem;
+   overflow: hidden;
+}
+.me:hover{
+ overflow:visible;
+}
+.scroll-down{
+    position: absolute;
+    right:-2.3rem;
+    bottom:5rem;
+    transform: rotate(90deg);
+    font-weight:300;
+    font-size: 0.9rem;
+}
+/* **************MEDIA QUERIES(meduim devices) ****** */
+@media screen and (max-width: 1024px) {
+    header{
+        height:68vh;
+    }
+}
+/* **************MEDIA QUERIES(small devices) ****** */
+@media screen and (max-width: 600px) {
+    header{
+        height:100vh;
+    }
+    
+    .header-social,
+    .scroll-down{
+        display: none;
+    }
+}
