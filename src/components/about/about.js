@@ -37,7 +37,7 @@ function About(){
                         </article>
                     </div>
                     <p>
-                        I am <i><b>Khaled Jouablia</b></i>, I am 22 years old (born in 1999)
+                        My name is <i><b>Khaled Jouablia</b></i>, I'm  22 years old (born in 1999)
                         I am currently finishing my bachelor’s degree in Business 
                         intelligence at the University of Jendouba. And now I enjoy
                         my summer vacation to learn the JavaScript library "React JS".
