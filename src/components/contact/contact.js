@@ -4,6 +4,8 @@ import './contact.css'
 import EmailIcon from '@mui/icons-material/Email';
 import Messenger from '../../assets/messenger.png'
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+
+import {data} from '../../data'
 function Contact(){
 
     const form=useRef();
@@ -11,15 +13,16 @@ function Contact(){
         e.preventDefault();
         emailjs.sendForm('service_wf98quh', 'template_5o4sps6', form.current, 'UcaiqF1j_-e4dqD0O')
         .then((result) => {
-            console.log(result.text);
-            alert('votre message a bien été envoyé')
+          
+            alert('Message send successeffully')
             }, 
             (error) => {
                 console.log(error.text);
-                alert("Probléme d'envoi de votre message !")
+                alert("Error when sending the message!")
             })
         e.target.reset()
-        }
+    }
+
     return(
         <section id="contact">
             <div>
@@ -31,22 +34,23 @@ function Contact(){
                     <article className='contact-option'>
                         <EmailIcon className='contact-option-icon'/>
                         <h4>Email</h4>
-                        <h5>Khaledjb584@gmail.com</h5>
-                        <a href="mailto:khaledjb584@gmail.com" >Send a message</a>
+                        <h5>{data.email}</h5>
+                        <a href={"mailto:" + data.email} >Send a message</a>
                     </article>
+
                     <article className='contact-option'>
                         <div>
                         <img  src={Messenger} className='contact-option-icon messenger' alt="messenger"/>
                         </div>
                         <h4>Messenger</h4>
-                        <h5>Khaled Jouablia</h5>
-                        <a href="http://m.me/khaled.jouablia" target='_blank'>Send a message</a>
+                        <h5>{data.messenger.label}</h5>
+                        <a href={data.messenger.link} target='_blank'>Send a message</a>
                     </article>
                     <article className='contact-option'>
                         <WhatsAppIcon className='contact-option-icon'/>
                         <h4>WhatsApp</h4>
-                        <h5>+216 53 076 588</h5>
-                        <a href="https://api.whatsapp.com/send?phone+21653076588">Send a message</a>
+                        <h5>{data.whatsApp.tel}</h5>
+                        <a href={data.whatsApp.link}>Send a message</a>
                     </article>
                 </div>
                 <form ref={form} onSubmit={sendEmail}>

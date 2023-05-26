@@ -1,7 +1,9 @@
 import React from 'react'
 import './experience.css'
 import Check from '@mui/icons-material/PlaylistAddCheckCircleOutlined';
+import { data } from '../../data'
 function Experience(){
+    const experiences = data.experiences; 
     return(
         <section id="experiences">
             <div>
@@ -9,79 +11,34 @@ function Experience(){
                 <h2>My Experience</h2>
             </div>
             <div className='container experience-container'>
-                <div className='experience-frontend'>
-                    <h3>Frontend Development</h3>
-                    <div className='experience-content'>
-                        <article className='experience-details'>
-                            <Check className='experience-detail-icon'/>
-                            <div>
-                                <h4>HTML 5</h4>
-                                <small className='text-light'>Experienced</small>
+                {
+                    experiences.map((experience)=>{
+                        return(
+                        <div className='experience-frontend'>
+                            <h3>{experience.title}</h3>
+                            
+                            <div className='experience-content'>
+                            { 
+                                experience.elements.map((element)=>
+                                    {
+                                        return(
+                                            <article className='experience-details'>
+                                                <Check className='experience-detail-icon'/>
+                                                <div>
+                                                    <h4>{element.title}</h4>
+                                                    <small className='text-light'>{element.level}</small>
+                                                </div>
+                                            </article>
+                                        ) 
+                                    }
+                                )
+                            }
                             </div>
-                        </article>
-                        <article className='experience-details'>
-                            <Check className='experience-detail-icon'/>
-                            <div>
-                                <h4>CSS 3</h4>
-                                <small className='text-light'>Experienced</small>
-                            </div>
-                        </article>
-                        <article className='experience-details'>
-                            <Check className='experience-detail-icon'/>
-                            <div>
-                                <h4>JAVASCRIPT</h4>
-                                <small className='text-light'>Experienced</small>
-                            </div>
-                        </article>
-                        <article className='experience-details'>
-                            <Check className='experience-detail-icon'/>
-                            <div>
-                                <h4>REACT JS</h4>
-                                <small className='text-light'>Experienced</small>
-                            </div>
-                        </article>
-                        <article className='experience-details'>
-                            <Check className='experience-detail-icon'/>
-                            <div>
-                                <h4>BOOTSTRAP</h4>
-                                <small className='text-light'>Experienced</small>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-                <div className='experience-backend'>
-                    <h3>Backend Development</h3>
-                    <div className='experience-content'>
-                        <article className='experience-details'>
-                            <Check className='experience-detail-icon'/>
-                            <div>
-                                <h4>PHP</h4>
-                                <small className='text-light'>Experienced</small>
-                            </div>
-                        </article>
-                        <article className='experience-details'>
-                            <Check className='experience-detail-icon'/>
-                            <div>
-                                <h4>MySQL</h4>
-                                <small className='text-light'>Experienced</small>
-                            </div>
-                        </article>
-                        <article className='experience-details'>
-                            <Check className='experience-detail-icon'/>
-                            <div>
-                                <h4>JAVA</h4>
-                                <small className='text-light'>BASIC</small>
-                            </div>
-                        </article>
-                        <article className='experience-details'>
-                            <Check className='experience-detail-icon' />
-                            <div>
-                                <h4>PYTHON</h4>
-                                <small className='text-light'>BASIC</small>
-                            </div>
-                        </article>
-                   </div>
-                </div>
+
+                        </div>
+                        );
+                    })
+                }
             </div>
         </section>
     )

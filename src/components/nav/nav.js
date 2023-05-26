@@ -8,6 +8,7 @@ import './nav.css'
 
 function Nav(){
     const [activeNav,setActiveNav]=useState("#")
+
     return(
        <nav>
         <a href="#" className={activeNav==="#"? 'active':''} 
@@ -15,7 +16,7 @@ function Nav(){
                <Home/>
         </a>
         <a href="#about" className={activeNav==="#about"? 'active':''} 
-                onClick={()=>setActiveNav("#about")}>
+                onClick={()=>setActiveNav("#about")} >
             <About/>
         </a>
         <a href="#experiences" className={activeNav==="#experiences"? 'active':''}

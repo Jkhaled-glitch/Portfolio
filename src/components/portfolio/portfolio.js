@@ -1,24 +1,12 @@
 import React from 'react'
 import './portfolio.css'
-import Img from '../../assets/portfolio1.jpg'
+
+import {data} from '../../data'
 function Portfolio(){
     
-    const Data=[
-            {
-                id:'1',
-                image:Img,
-                title:'This example 1',
-                github:'http://github.com',
-                demo:'http://github.com/Alien_pixels'
-            },
-            {   
-                id:'2',
-                image:Img,
-                title:'This example 2',
-                github:'http://github.com',
-                demo:'http://github.com/Alien_pixels'
-            }
-    ]
+   
+    const projects = data.projects;
+
     
     
     return(
@@ -28,22 +16,28 @@ function Portfolio(){
                 <h2>Portfolio</h2>
             </div>
             <div className='container portfolio-container'>
-                {
-                Data.map(({id,image,title,github,demo})=>{
+              {
+                projects.map((project)=>{
                     return(
-                        <article key={id} className='portfolio-item'>
-                            <div className='portfolio-item-image'>
-                                <img src={image} alt={title}/>
+                        <article className='portfolio-item'>
+                            <div className='portfolio-item-image'>    
+                                <img src={project.image} alt={project.title}/>
                             </div>
-                            <h3>{title}</h3>
+                            <h3>{project.title}</h3> 
+                            
+                            <div className='portfolio-item-description'>
+                                {project.description}
+
+                            </div>
+                                
                             <div className='portfolio-item-cta'>
-                                <a href={github} className='btn' target='_blank'>Github</a>
-                                <a href={demo} className='btn btn-primary' target='_blank'>live Demo</a>
+                                <a href={project.code} className='btn' target='_blank'>Code</a>
+                                <a href={project.demo} className='btn btn-primary' target='_blank'>Demo</a>
                             </div>
                         </article>
                     )
                 })
-                }
+              }
             </div>
         </section>
     )

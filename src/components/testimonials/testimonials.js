@@ -1,37 +1,19 @@
 import React from 'react'
 import './testimonials.css'
-import User1 from '../../assets/user1.jfif'
-import User2 from '../../assets/user2.jfif'
-import User3 from '../../assets/user3.jfif'
+
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
-
-
 // import required modules
 import { Pagination } from "swiper";
 
+import {data} from '../../data'
+
 function Testimonials(){
-    const Data=[
-        {
-            avtr:User1,
-            name:'user 1',
-            review:'Excelent'
-        },
-        {
-            avtr:User2,
-            name:'user 2',
-            review:'Passable'
-        },
-        {
-            avtr:User3,
-            name:'user 3',
-            review:'Great'
-        }
-    ]
+    const testimonials = data.testimonials;
     return(
         <section id="testimonials">
             <div>
@@ -45,7 +27,7 @@ function Testimonials(){
                     slidesPerView={1}
                     >
                 {
-                    Data.map(({avtr,name,review},index)=>{
+                    testimonials.map(({avtr,name,review},index)=>{
                         return(
                         <SwiperSlide key={index} className='testimonial'>
                             <div className='client-avatar'>
