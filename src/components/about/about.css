@@ -55,10 +55,18 @@
     margin-bottom: 1rem;
 }
 
-.about-content p{
-   margin:2rem 0 2.6rem;
-   color:var(--color-light);
-}
+.about-content p {
+    margin: 2rem 0 2.6rem;
+    color: var(--color-light);
+    text-align: left;
+    font-family: "Times New Roman", Times, serif;
+ }
+.about-content p::first-letter{
+   font-size: larger;
+   font-weight: bold;
+   color:rgb(255,255,255,.7);
+ 
+ }
 
 /* **************MEDIA QUERIES(meduim devices) ****** */
 @media screen and (max-width: 1024px) {
@@ -78,6 +86,8 @@
     }
     .about-content p{
         margin:1rem 0 1.5rem;
+        
+        
      }
     
 }
@@ -95,6 +105,7 @@
         text-align: center;
     }
     .about-content p{
+
         margin:1.5rem 0;
     }
 }
