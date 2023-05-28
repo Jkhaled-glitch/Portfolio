@@ -4,6 +4,7 @@ import About from '@mui/icons-material/PersonOutline';
 import Experiences from '@mui/icons-material/Book';
 import Services from '@mui/icons-material/DesignServices';
 import Contact from '@mui/icons-material/Message';
+import WorkIcon from '@mui/icons-material/Work';
 import './nav.css'
 
 function Nav(){
@@ -23,6 +24,11 @@ function Nav(){
                 onClick={()=>setActiveNav("#experiences")}>
             <Experiences/>
         </a>
+        <a href="#portfolio" className={activeNav==="#portfolio"? 'active':''}
+                onClick={()=>setActiveNav("#portfolio")}>
+           <WorkIcon/>
+           
+        </a>        
         <a href="#services" className={activeNav==="#services"? 'active':''}
                 onClick={()=>setActiveNav("#services")}>
             <Services/>

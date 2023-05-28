@@ -35,7 +35,7 @@ header{
 }
 /*  ****** ME ******  */
 .me{
-   background: linear-gradient(var(--color-primary),transparent);
+
    width:22rem;
    height:30rem;
    position:absolute;
@@ -43,9 +43,12 @@ header{
    left:calc(50% - 11rem);
    border-radius:6rem 6rem 1rem 1rem;
    overflow: hidden;
+   transition: var(--transition);
+   
 }
 .me:hover{
- overflow:visible;
+    border-radius:2rem 2rem 1rem 1rem;
+
 }
 .scroll-down{
     position: absolute;
@@ -59,9 +62,7 @@ header{
 
 /* **************MEDIA QUERIES(small devices) ****** */
 @media screen and (max-width: 600px) {
-    header{
-        height:80vh;
-    }
+    
     
     .header-social,
     .scroll-down{
