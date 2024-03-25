@@ -1,5 +1,6 @@
 //Apps&websites Icons
 import Location from './assets/location.png'
+
 import LocationAdmin from './assets/location-admin.png'
 import Communiteam from './assets/communiteam.png'
 import Weather from './assets/weather.png'
